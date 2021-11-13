@@ -9,7 +9,8 @@ User.hasMany(Post, {
 
 // post belongs to user
 Post.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'SETNULL'
 });
 
 // post can have many comments
