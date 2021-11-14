@@ -73,7 +73,6 @@ router.get('/post/:id', (req, res) => {
         }
 
         const post = postData.get({ plain: true });
-        console.log(post)
 
         res.render('single-post', {
             post,
