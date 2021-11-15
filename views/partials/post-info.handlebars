@@ -1,9 +1,14 @@
 <article class="post">
     <div class="title">
-        <p>{{createdAt}}</p>
+        {{#if created_at}}
+        <p>{{dateFormat created_at}}</p>
+        {{else}}
+        <p>{{dateFormat createdAt}}</p>
+        {{/if}}
+
         <h4>{{title}}</h4>
         <p>{{post_text}}</p>
         <p>Author: {{user.username}}</p>
-        <a href="/post/{{id}}">{{comments.length}} Comments</a>
+        <a href="/post/{{id}}">{{comments.length}} {{pluralFormat "comment" comments.length}}</a>
     </div>
 </article>

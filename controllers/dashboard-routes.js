@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
+const authorization = require('../utils/authorization');
 
 // get all user posts for dashboard
-router.get('/', (req, res) => {
-    console.log('this is the session', req.session)
+router.get('/', authorization, (req, res) => {
     Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', authorization, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',

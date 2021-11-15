@@ -26,11 +26,23 @@ router.get('/', (req, res) => {
         ]
     })
         .then(postData => {
+            if (req.session.countVisit) {
+                req.session.countVisit++;
+                req.session.firstTime = false;
+            } else {
+                req.session.countVisit = 1;
+                req.session.firstTime = true;
+                res.redirect('/login')
+            }
+
             const posts = postData.map(post => post.get({ plain: true }));
+            console.log(posts);
 
             res.render('homepage', {
                 posts,
-                loggedIn: req.session.loggedIn
+                loggedIn: req.session.loggedIn,
+                countVisit: req.session.countVisit,
+                fistTime: req.session.firstTime
             });
         })
         .catch(err => {

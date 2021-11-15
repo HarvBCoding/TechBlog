@@ -18,7 +18,9 @@ router.post('/', (req, res) => {
         user_id: req.session.user_id,
         post_id: req.body.post_id
     })
-      .then(commentData => res.json(commentData))
+      .then(commentData => {
+          res.json(commentData)
+        })
       .catch(err => {
           console.log(err);
           res.status(400).json(err);
