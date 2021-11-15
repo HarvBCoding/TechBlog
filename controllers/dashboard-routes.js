@@ -74,7 +74,6 @@ router.get('/edit/:id', (req, res) => {
     .then(postData => {
         if (postData) {
             const post = postData.get({ plain: true });
-
             res.render('edit-post', {
                 post,
                 loggedIn: true

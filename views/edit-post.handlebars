@@ -1,0 +1,23 @@
+<article>
+    <h2> Edit Post</h2>
+    <form class="edit-post-form">
+        <div>
+            <input name="post-title" type="text" value="{{post.title}}" />
+            <textarea name="post-text">{{post.post_text}}</textarea>
+        </div>
+        <button type="submit">Save Post</button>
+        <button type="button" class="delete-post-btn">Delete post</button>
+    </form>
+</article>
+
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Add comment</button>
+    </div>
+</form>
+
+{{> comments post.comments}}
