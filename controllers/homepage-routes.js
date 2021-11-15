@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
             } else {
                 req.session.countVisit = 1;
                 req.session.firstTime = true;
-                res.redirect('/login')
+                // res.redirect('/login')
             }
 
             const posts = postData.map(post => post.get({ plain: true }));
