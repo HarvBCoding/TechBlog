@@ -83,13 +83,14 @@
   }
   
   header h1 {
-    font-size: 1em;
+    font-size: 1.5em;
   }
   
   main {
     flex: 1;
     padding: 2% 4%;
   }
+
   
   .btn-no-style {
     background: none;
@@ -121,6 +122,10 @@
     margin-bottom: 2%;
     line-height: 150%;
   }
+
+  #post-text {
+    width: 90%;
+  }
   
   .post .title span {
     font-style: italic;
@@ -133,17 +138,12 @@
     margin: -1.5% 0 2% 0;
   }
   
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
   .comment-form {
     margin-bottom: 5%;
+  }
+
+  #comment-body {
+      width: 40%;
   }
   
   .comment {
@@ -152,7 +152,7 @@
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #d2e9ff;
   }
   
   .comment .meta {
