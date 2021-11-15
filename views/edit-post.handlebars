@@ -2,8 +2,8 @@
     <h2> Edit Post</h2>
     <form class="edit-post-form">
         <div>
-            <input name="post-title" type="text" value="{{post.title}}" />
-            <textarea name="post-text">{{post.post_text}}</textarea>
+            <input name="post-title" type="text" id="post-title" value="{{post.title}}" />
+            <textarea name="post-text" id="post-text">{{post.post_text}}</textarea>
         </div>
         <button type="submit">Save Post</button>
         <button type="button" class="delete-post-btn">Delete post</button>
@@ -21,3 +21,6 @@
 </form>
 
 {{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
