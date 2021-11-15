@@ -3,10 +3,14 @@
 {{#if loggedIn}}
 <form class="comment-form">
     <div>
-        <textarea name="comment-body"></textarea>
+        <textarea id="comment-body" name="comment-body"></textarea>
     </div>
-    <button type="submit">Add Comment</button>
+    <button id="comment-btn" type="submit">Add Comment</button>
 </form>
 {{/if}}
 
 {{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/add-comment.js"></script>
+{{/if}}
